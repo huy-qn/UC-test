@@ -1,0 +1,10 @@
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="si-nimble-delete">
+    <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
+    <title class="">Delete</title>
+    
+    <defs class=""/>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="">
+        <path d="M21.092,16.849 L15.435,11.192 L21.092,5.535 C21.483,5.144 21.483,4.512 21.092,4.12 L18.264,1.292 C17.872,0.901 17.24,0.901 16.85,1.292 L11.193,6.949 L5.536,1.292 C5.145,0.901 4.514,0.901 4.122,1.292 L1.294,4.12 C0.903,4.511 0.903,5.143 1.294,5.535 L6.951,11.192 L1.294,16.849 C0.903,17.24 0.903,17.872 1.294,18.264 L4.122,21.092 C4.514,21.483 5.146,21.483 5.536,21.092 L11.193,15.435 L16.85,21.092 C17.24,21.482 17.872,21.483 18.264,21.092 L21.092,18.264 C21.482,17.873 21.482,17.239 21.092,16.849 L21.092,16.849 Z" stroke="#414042" stroke-width="2" class="si-nimble-delete-delete si-nimble-delete-thick si-nimble-delete-stroke si-nimble-stroke" style=""/>
+    </g>
+</svg>

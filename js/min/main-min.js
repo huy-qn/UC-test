@@ -1,0 +1,1 @@
+jQuery(document).ready(function($){$(".toggle-comments").on("click",function(e){e.preventDefault(),$(".panel").addClass("is-visible")}),$(".panel").on("click",function(e){($(e.target).is(".panel")||$(e.target).is(".panel-close"))&&($(".panel").removeClass("is-visible"),e.preventDefault())})});
