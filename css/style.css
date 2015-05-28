@@ -11,6 +11,13 @@ body {
   line-height: 24px;
   color: #222; }
 
+.top {
+  position: absolute;
+  bottom: 60px; }
+
+.clearfix {
+  clear: both; }
+
 h1, h2, h3, h4, h5 {
   font-family: 'Source Sans Pro', sans-serif; }
 
@@ -202,7 +209,119 @@ aside {
     transition: all .2s ease-in-out; }
     .comment-input input:focus {
       border: solid 1px #285F86;
-      background: #fcfdfe; }
+      background: #fcfdfe;
+      outline: 0; }
+
+.profile-heading {
+  padding: 20px 80px;
+  background: #F5F7F7;
+  border-bottom: solid 1px #C2C9CC; }
+  .profile-heading .user-picture {
+    float: left; }
+  .profile-heading img {
+    border-radius: 4px;
+    background: #fff;
+    padding: 4px;
+    border: solid 1px #E8ECED;
+    width: 100px;
+    height: 100px; }
+  .profile-heading .user-details {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 15px; }
+    .profile-heading .user-details h3 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 36px;
+      color: #285F86; }
+    .profile-heading .user-details span.mention {
+      color: #C2C9CC;
+      display: block;
+      line-height: 30px; }
+  .profile-heading .user-stats {
+    float: right;
+    margin-top: 30px;
+    margin-right: 300px; }
+    .profile-heading .user-stats .stats-item {
+      display: inline-block;
+      border-radius: 4px;
+      background: #E8ECED;
+      min-width: 80px;
+      padding: 6px 10px;
+      margin: 0 10px;
+      transition: all .2s ease-in-out; }
+      .profile-heading .user-stats .stats-item:hover {
+        cursor: pointer; }
+      .profile-heading .user-stats .stats-item.active, .profile-heading .user-stats .stats-item:hover {
+        background: #285F86;
+        color: #fff; }
+      .profile-heading .user-stats .stats-item span {
+        display: block;
+        text-align: center;
+        line-height: 18px; }
+        .profile-heading .user-stats .stats-item span.number {
+          font-weight: bold; }
+        .profile-heading .user-stats .stats-item span.label {
+          font-size: 12px; }
+
+.profile-stats {
+  max-width: 980px;
+  margin: 0 auto; }
+  .profile-stats .stats-list {
+    margin-top: 20px;
+    max-width: 700px;
+    float: left; }
+    .profile-stats .stats-list ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 18px; }
+      .profile-stats .stats-list ul li {
+        padding: 20px;
+        display: block;
+        transition: all .2s ease-in-out; }
+        .profile-stats .stats-list ul li span.context {
+          display: block; }
+          .profile-stats .stats-list ul li span.context h4 {
+            margin: 0;
+            display: inline-block; }
+        .profile-stats .stats-list ul li blockquote {
+          font-size: 14px;
+          border-left: dashed 1px #C2C9CC;
+          margin: 5px 0;
+          padding: 0;
+          padding-left: 10px;
+          color: #C2C9CC; }
+        .profile-stats .stats-list ul li:hover {
+          cursor: pointer;
+          background: #F5F7F7;
+          border-radius: 4px; }
+        .profile-stats .stats-list ul li.more {
+          margin-top: 10px;
+          background: #285F86;
+          color: #fff;
+          border-radius: 4px;
+          padding: 10px;
+          text-align: center; }
+          .profile-stats .stats-list ul li.more:hover {
+            background: #225172; }
+  .profile-stats .list-type {
+    width: 260px;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    border-left: solid 1px #C2C9CC; }
+    .profile-stats .list-type ul {
+      list-style-type: none; }
+      .profile-stats .list-type ul li {
+        padding: 10px 0; }
+        .profile-stats .list-type ul li a {
+          color: #C2C9CC;
+          transition: all .2s ease-in-out; }
+          .profile-stats .list-type ul li a:hover {
+            color: #285F86; }
+          .profile-stats .list-type ul li a.active {
+            color: #285F86; }
 
 .icon {
   width: 18px;
