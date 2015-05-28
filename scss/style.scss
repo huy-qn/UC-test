@@ -490,3 +490,17 @@ label {
     background-size: 12px 12px;
   }
 }
+
+
+// INTRO 
+#intro {
+  font-size: 18px;
+  line-height: 30px;
+  max-width: 600px;
+  margin: 80px auto;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
