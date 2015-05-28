@@ -22,6 +22,9 @@ jQuery(document).ready(function($){
       ]
   });
 
+  $('#year-from-select').selectize();
+  $('#year-to-select').selectize();
+
   $('#country-select').selectize({
     maxItems: 4,
     items: [1,2],

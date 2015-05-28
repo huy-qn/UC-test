@@ -137,6 +137,21 @@ aside {
   .circle.rockblue {
     background: RGBA(151, 187, 205, 1); }
 
+label {
+  font-size: 10px;
+  color: #285F86;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-left: 5px; }
+
+.indicator-select {
+  min-width: 75%;
+  display: inline-block; }
+
+.year-select {
+  min-width: 12%;
+  display: inline-block; }
+
 .panel {
   /*...*/
   visibility: hidden;
@@ -282,9 +297,6 @@ aside {
         transition: all .2s ease-in-out; }
         .profile-stats .stats-list ul li span.context {
           display: block; }
-          .profile-stats .stats-list ul li span.context h4 {
-            margin: 0;
-            display: inline-block; }
         .profile-stats .stats-list ul li blockquote {
           font-size: 14px;
           border-left: dashed 1px #C2C9CC;

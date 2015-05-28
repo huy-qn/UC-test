@@ -190,6 +190,21 @@ aside {
 
 
 // SELECTORS 
+label {
+  font-size: 10px;
+  color: $darkblue;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-left: 5px;
+}
+.indicator-select {
+  min-width: 75%;
+  display: inline-block;
+}
+.year-select {
+  min-width: 12%;
+  display: inline-block;
+}
 
 // COMMENTS
 
