@@ -4,90 +4,174 @@
   <meta charset="UTF-8">
   <title>Urban Care - Discussion Board</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/selectize/dist/css/selectize.css" />
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/selectize/dist/js/standalone/selectize.min.js"></script>
+  <script src="bower_components/chartjs/Chart.min.js"></script>
 </head>
 <body>
-  <main class="main-content">
-    <button class="toggle-comments" href="#0"><i class="comment icon"></i> Comments</button>
-  </main>
+  <header>
+    <h1 class="logo">urban<strong>care</strong></h1>
+  </header>
 
-  <div class="panel">
-    <div class="panel-container">
-      <h3>Comments<a class="panel-close" href="#0">Hide</a></h3>
+  <main class="main-content">
+    <div class="chart">
+      <div class="board-header">
+        <div class="indicator-select">
+          <select name="Indicators Selector" placeholder="Adjusted savings: net forest depletion (current US$)" id="indicator-select">
+            <option value="1"> Access to electricity <strong>(% of population)</strong></option>
+            <option value="2"> Adequacy of social insurance programs (% of total welfare of beneficiary households)  </option>
+            <option value="3"> Adjusted savings: net forest depletion (current US$)  </option>
+            <option value="4"> CO2 intensity (kg per kg of oil equivalent energy use) </option>
+            <option value="5"> Child employment in agriculture (% of economically active children ages 7-14)  </option>
+            <option value="6"> Child employment in agriculture, female (% of female economically active children ages 7-14) </option>
+            <option value="7"> Child employment in agriculture, male (% of male economically active children ages 7-14) </option>
+            <option value="8"> Community health workers (per 1,000 people)  </option>
+            <option value="9"> Communications, computer, etc. (% of service imports, BoP) </option>
+            <option value="10"> Communications, computer, etc. (% of service exports, BoP)  </option>
+          </select>            
+        </div>
+      </div>  
+      <div class="board-content">
+        <div class="chart-wrapper">
+         <canvas id="myLineChart" height="125"></canvas>         
+        </div>
+      </div>
+      <div class="board-footer">
+        <div class="country-select">
+          <select name="Countries Selector" id="country-select">
+            <option value="1" selected="selected"> Viet Nam </option>
+            <option value="2" > Lao PDR  </option>
+            <option value="3" selected="selected"> Cambodia  </option>
+            <option value="4"> Thailand </option>
+          </select>            
+        </div>
+      </div>  
+    </div>
+<!-- <button class="toggle-comments" href="#0"><i class="comment icon"></i> Comments</button> -->
+    <aside>
+      <h3>Comments (5)<!-- <a class="panel-close" href="#0">Hide</a> --></h3>
+      <div id="input" class="comment-input">
+        <input type="text" placeholder="Write a comment">
+        <button class="submit">Post</button>
+      </div>
       <div class="comments">
         <div class="comment-item ">
           <div class="comment-user">
-            <img src="https://pbs.twimg.com/profile_images/545995221914230785/N9a6vr0W.jpeg" alt="">
+            <img src="https://pbs.twimg.com/profile_images/555814087167205376/7sPnaA_u_400x400.png" alt="">
             <div class="meta">
-              <span class="username">Max</span>
-              <span class="time">2 days ago</span>              
+              <span class="username">Huy Nguyen</span>
+              <span class="time">3 days ago</span>              
             </div>
           </div>
           <div class="comment-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam magnam accusamus obcaecati nisi eveniet quo veniam quibusdam veritatis autem accusantium doloribus nam mollitia maxime explicabo nemo quae aspernatur impedit cupiditate dicta molestias consectetur, sint reprehenderit maiores. </p>
-            <a href="#" class="reply"><i class="reply icon"></i> Reply</a>
+            <p>Hi there, my name is Huy. This is my comment. Thanks for reading this. To reply to my comment. Please click the link "Reply" below. It should opens an input for you to type your reply. But since this is just a prototype. It is not working very well! </p>
+            <a href="#input" class="reply"><i class="reply icon"></i> Reply</a>
           </div>
           <div class="comment-item parent child">
             <div class="comment-user">
               <img src="https://pbs.twimg.com/profile_images/545995221914230785/N9a6vr0W.jpeg" alt="">
               <div class="meta">
-                <span class="username">Max</span>
+                <span class="username">Sam Soffes</span>
                 <span class="time">2 days ago</span>              
               </div>
             </div>
             <div class="comment-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam magnam accusamus obcaecati nisi eveniet quo veniam quibusdam veritatis autem accusantium doloribus nam mollitia maxime explicabo nemo quae aspernatur impedit cupiditate dicta molestias consectetur, sint reprehenderit maiores. </p>
-              <a href="#" class="reply"><i class="reply icon"></i> Reply</a>
+              <p>Hi Huy, thanks for your instructing. Do you know where I can find information of the other members? I am curious to know more about <a href="user.html">@Vincent</a></p>
+              <a href="#input" class="reply"><i class="reply icon"></i> Reply</a>
             </div>
           <div class="comment-item parent child">
             <div class="comment-user">
-              <img src="https://pbs.twimg.com/profile_images/545995221914230785/N9a6vr0W.jpeg" alt="">
+              <img src="https://pbs.twimg.com/profile_images/728337241/conan_4cred_400x400.jpg" alt="">
               <div class="meta">
-                <span class="username">Max</span>
-                <span class="time">2 days ago</span>              
+                <span class="username">Vincent</span>
+                <span class="time">30 minutes ago</span>              
               </div>
             </div>
             <div class="comment-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam magnam accusamus obcaecati nisi eveniet quo veniam quibusdam veritatis autem accusantium doloribus nam mollitia maxime explicabo nemo quae aspernatur impedit cupiditate dicta molestias consectetur, sint reprehenderit maiores. </p>
-              <a href="#" class="reply"><i class="reply icon"></i> Reply</a>
+              <p>Hey Sam, I am Vincent. Nice to meet you! You would just need to click on my name of my profile picture. They will link to my profile. Hope it helps!
+
+              Great work btw, Huy!</p>
+              <a href="#input" class="reply"><i class="reply icon"></i> Reply</a>
             </div>
           </div>
           <div class="comment-item parent child">
             <div class="comment-user">
-              <img src="https://pbs.twimg.com/profile_images/545995221914230785/N9a6vr0W.jpeg" alt="">
+              <img src="https://pbs.twimg.com/profile_images/565966489979596800/pBmU9XFX_400x400.png" alt="">
               <div class="meta">
-                <span class="username">Max</span>
-                <span class="time">2 days ago</span>              
+                <span class="username">Frank</span>
+                <span class="time">4 hours ago</span>              
               </div>
             </div>
             <div class="comment-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam magnam accusamus obcaecati nisi eveniet quo veniam quibusdam veritatis autem accusantium doloribus nam mollitia maxime explicabo nemo quae aspernatur impedit cupiditate dicta molestias consectetur, sint reprehenderit maiores. </p>
-              <a href="#" class="reply"><i class="reply icon"></i> Reply</a>
+              <p>Yes yes yes, but it sure will be better if you can make it changable in real-time, Huy. Keep working on it!</p>
+              <a href="#input" class="reply"><i class="reply icon"></i> Reply</a>
             </div>
           </div>
           </div>
           <div class="comment-item">
             <div class="comment-user">
-              <img src="https://pbs.twimg.com/profile_images/545995221914230785/N9a6vr0W.jpeg" alt="">
+              <img src="https://pbs.twimg.com/profile_images/378800000539652543/816dbfb326b9e6b422c012c7024e1df1_bigger.png" alt="">
               <div class="meta">
-                <span class="username">Max</span>
+                <span class="username">Vic</span>
                 <span class="time">2 days ago</span>              
               </div>
             </div>
             <div class="comment-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam magnam accusamus obcaecati nisi eveniet quo veniam quibusdam veritatis autem accusantium doloribus nam mollitia maxime explicabo nemo quae aspernatur impedit cupiditate dicta molestias consectetur, sint reprehenderit maiores. </p>
-              <a href="#" class="reply"><i class="reply icon"></i> Reply</a>
+              <p>Really helpful information!</p>
+              <a href="#input" class="reply"><i class="reply icon"></i> Reply</a>
             </div>
           </div>
         </div>
       </div> <!-- comments-list -->
-      <div class="comment-input">
+      <div id="input" class="comment-input">
         <input type="text" placeholder="Write a comment">
         <button class="submit">Post</button>
       </div>
-    </div> <!-- panel-container -->
-  </div> <!-- panel -->
+    </aside>
+  </main>
+  <div class="data-about">
+    <div class="notes">
+      <span class="item"><i class="circle fountainblue"></i> Vietnam</span>
+      <span class="item"><i class="circle rockblue"></i> Lao PDR</span>
+    </div>
+    <h3>Adjusted savings: net forest depletion (current US$)</h3>
+  </div>
+<script>
+  var ctx = $("#myLineChart").get(0).getContext("2d");  
 
+  var data = {
+      labels: ["2004", "2005", "2006", "2007", "2008", "2009", "2010"],
+      datasets: [
+          {
+              label: "Viet Nam",
+              fillColor: "RGBA(95, 190, 196, .1)",
+              strokeColor: "RGBA(95, 190, 196, 1)",
+              pointColor: "RGBA(95, 190, 196, 1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "RGBA(95, 190, 196, 1)",
+              data: [500283424, 381492896, 564137536, 672526144, 977367360, 748003520, 974168768]
+          },
+          {
+              label: "Lao PDR",
+              fillColor: "rgba(151,187,205,0.2)",
+              strokeColor: "rgba(151,187,205,1)",
+              pointColor: "rgba(151,187,205,1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(151,187,205,1)",
+              data: [84016016, 57297984, 83063304, 93523936, 154128576, 106757600, 164992688]
+          }
+      ]
+  };
+
+  var myNewChart = new Chart(ctx).Line(data, {
+    responsive: true
+  });
+
+</script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
+
 </body>
 </html>
