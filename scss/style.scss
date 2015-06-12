@@ -1,5 +1,6 @@
 @import url('/bower_components/normalize-css/normalize.css');
 @import url(://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+@import url(://fonts.googleapis.com/css?family=Lato:400,700);
 
 $black: #222;
 $white: #fff;
@@ -12,18 +13,326 @@ $fountainblue: RGBA(95, 190, 196, 1);
 $rockblue: RGBA(151, 187, 205, 1);
 $radius: 4px;
 
+$tangaroa: #212E3B;
+$picton-blue: #44D1EF;
+$red: #DB665E;
+$header-background: #1D2934;
+$secondary-gray: #4A5D63;
+$lighter-secondary-gray: #6A7C80;
+$secondary-green: #00B15C;
+$text-color: #B6B6B6;
+$baseline: 6px;
+$column-width: 90px;
+$gutter: 30px;
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+// ROUND 2
+
 body {
   background: $white;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: $baseline * 3;
+  line-height: $baseline * 5;
   color: $black; 
+  &#round-2 {
+    background: $tangaroa;
+    font-family: 'Lato', sans-serif;
+    margin: 0 auto;
+
+    a.mention {
+      color: $picton-blue;
+    }
+
+    header {
+      background: $header-background;
+      border-bottom: solid 1px #2D363F;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: $baseline * 10;
+      padding: 0 auto;
+    }
+
+    h1.logo {
+      padding-left: 0;
+      color: $white;
+      float: left;
+      font-size: $baseline * 4;
+      strong {
+        color: $picton-blue;
+      }
+    }
+
+    .right {
+      float: right;
+
+      &.search, &.search input {
+
+        i {
+          position: relative;
+          top: 4px;
+          left: 7px;
+          margin-right: 7px;
+        }
+
+        position: relative;
+        background: #2A3641;
+        border-radius: 2px;
+        border: 0;
+        color: $secondary-gray;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+
+      &.search {
+        position: relative;
+        top: 15px;
+        height: 30px;
+        width: $column-width*3 + $gutter*2;
+        margin-right: $gutter;
+      }
+
+      &.search input {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        top: -2px;
+      }
+
+      ::-webkit-input-placeholder {
+        color: $secondary-gray;
+      }
+
+    &.user-account {
+      position: relative;
+      padding: 0 $baseline;
+      top: 7.5px;
+      &:hover {
+        cursor: pointer;
+      }
+    i {
+      color: $lighter-secondary-gray;
+      position: relative;
+      top: -16px;
+    }
+
+    .notification {
+      font-size: $baseline * 1.8;
+      font-weight: 700;
+      text-align: center;
+      position: relative;
+      top: -4px;
+      left: $baseline * 4;
+      background: $red;
+      color: $white;
+      border-radius: 50%;
+      width: $baseline * 3;
+      height: $baseline * 3;
+      z-index: 99;
+      &:hover {
+        background: darken($red, 10%);
+      }
+
+      span {
+        display: inline-block;
+        position: relative;
+        top: -6px;
+        }
+      }
+
+      img.profile-picture {
+        position: relative;
+        top: -14px;
+        width: $baseline * 6;
+        height: $baseline * 6;
+        border-radius: 50%;
+      }
+    }      
+
+    }
+
+    .chart-header {
+      margin-top: $column-width;
+      label {
+        display: block;
+        color: $picton-blue;
+        padding: 0;
+        margin-bottom: $baseline;
+        letter-spacing: 1px;
+      }
+      h3 {
+        margin: 0;
+        padding: 0;
+        color: $white;
+        font-size: $baseline * 3;
+        line-height: $baseline * 3;
+      }
+      .indicator-selector {
+        width: $column-width * 4 + $gutter * 3;
+      }
+      .year-selector {
+        width: $column-width - 15px;
+        margin-right: $gutter; 
+      }
+      .indicator-selector, .year-selector {
+        display: block;
+        float: left;
+
+        i {
+          display: inline-block;
+          position: relative;
+          right: 0;
+          color: $secondary-gray;
+          font-size: $baseline * 4;
+        }
+        &:hover > i {
+          color: $lighter-secondary-gray;
+        }
+        &:hover { 
+          cursor: pointer;
+        }
+      }
+      span.indicator-value {
+        color: $secondary-green;
+        font-size: $baseline * 2;
+      }
+    }
+
+    #myLineChart-2 {
+      margin-top: $gutter;
+    }
+
+    .comments {
+      margin-top: $column-width;
+      width: 100%;
+
+      img.profile-picture {
+        display: block;
+        width: $baseline * 8;
+        height: $baseline * 8;
+        border-radius: 50%;
+        float: left;
+        margin-right: $baseline * 2;
+      }
+
+      .comment-item {
+        display: block;
+        margin-top: $baseline * 2;
+
+        &:hover {
+          cursor: pointer;
+          & > .time-ago {
+            display: block;
+          }
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        .time-ago {
+          float: right;
+          color: $secondary-gray;
+          display: none;
+        }
+
+        .comment-acitons {
+          color: $secondary-gray;
+          margin-top: $baseline;
+          i {
+            font-size: $baseline * 2;
+            padding-left: $column-width - $gutter;
+          }
+
+          &:hover {
+            color: $lighter-secondary-gray;
+          }
+        }
+
+        .comment-content {
+          padding-left: $column-width - $gutter;
+        }
+
+        .user-name {
+          color: $white;
+          font-weight: bold;
+          display: block;
+          margin: 0;
+          padding: 0;
+          margin-bottom: $baseline * 2;
+        }
+
+        .user-comment {
+          max-width: $column-width * 7 + $gutter * 6;
+          color: $text-color;
+          line-height: $baseline * 4;
+        }
+
+        &.child {
+          margin-left: $column-width - $gutter;
+        }
+
+      }
+
+      .comments-input {
+
+        margin-top: $gutter;
+        margin-bottom: $column-width;
+
+        .btn {
+          float: right;
+          margin-right: $gutter - $baseline;
+        }
+
+        textarea {
+          background: #2A3642;
+          border: 0;
+          width: $column-width * 7 + $gutter * 7;
+          height: $column-width - $gutter;
+          border-radius: 2px;
+          color: $white;
+          padding-left: $baseline * 2;
+          font-size: $baseline * 2.5;
+
+          &::-webkit-input-placeholder {
+              color: $lighter-secondary-gray;
+              font-size: $baseline * 2.5;
+          }
+
+          &:focus {
+            outline: 0;
+          }
+        }
+      }
+    }
+
+    h2 {
+      color: $picton-blue;
+      font-size: $baseline * 3;
+      font-weight: 400;
+    }
+  }
+}
+
+.btn__success {
+  background: $secondary-green;
+  color: $white;
+  &:hover {
+    background: darken($secondary-green, 10%);
+  }
+}
+
+.wrapper {
+  max-width: 940px;
+  padding: 0 5px;
+  margin: 0 auto;
 }
 
 // GENERAL

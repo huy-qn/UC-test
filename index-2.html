@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Urban Care - Discussion Board</title>
+  <link rel="stylesheet" href="//gangstafat.github.io/UC-test/bower_components/normalize-css/normalize.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/selectize/dist/css/selectize.css" />
+  <!-- <link rel="stylesheet" href="http://basehold.it/6"> -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
+  <script src="bower_components/selectize/dist/js/standalone/selectize.min.js"></script>
+  <script src="bower_components/chartjs/Chart.min.js"></script>
+</head>
+<body id="round-2">
+  <header>
+    <div class="wrapper">
+     <h1 class="logo">urban<strong>care</strong></h1>
+     <div class="right user-account">
+      <a href="">
+        <div class="notification"><span>12</span></div>
+        <img class="profile-picture" src="https://pbs.twimg.com/profile_images/555814087167205376/7sPnaA_u_400x400.png" alt="">
+        <i class="material-icons">keyboard_arrow_down</i>
+      </a>
+     </div>  
+     <div class="right search">
+        <i class="material-icons">search</i>
+       <input type="text" placeholder="Search"></input>
+     </div>  
+    </div>
+  </header>
+  <main class="wrapper">
+    <div class="chart-header">
+      <div class="indicator-selector">
+          <label for="indicator-selector">Choose Indicator</label>
+          <i class="material-icons right">keyboard_arrow_down</i>
+          <h3 class="indicator-name">Adjusted Savings: Net Forest Depletion </h3>
+          <span class="indicator-value">(current US$)</span>
+      </div>
+      <div class="right">
+        <div class="year-selector">
+          <label for="year-to">From</label>
+          <i class="material-icons right">keyboard_arrow_down</i>
+          <h3 class="indicator-name">2005</h3>
+        </div>    
+        <div class="year-selector">
+          <label for="year-to">To</label>
+          <i class="material-icons right">keyboard_arrow_down</i>
+          <h3 class="indicator-name">2011</h3>
+        </div>       
+      </div>
+    </div>
+    <div class="chart-main">
+       <canvas id="myLineChart-2" height="125"></canvas>         
+    </div>
+    <section class="comments">
+      <h2>2 COMMENTS</h2>
+      <div class="comment-item">
+        <img class="profile-picture" src="https://pbs.twimg.com/profile_images/555814087167205376/7sPnaA_u_400x400.png" alt="">
+        <span class="time-ago">2 days ago</span>
+        <div class="comment-content">
+         <span class="user-name">Huy Nguyen</span>
+          <p class="user-comment">Hi there, my name is Huy. This is my comment. Thanks for reading this. To reply to my comment. Please click the link "Reply" below. It should opens an input for you to type your reply. But since this is just a prototype. It is not working very well! </p>         
+        </div>
+        <div class="comment-acitons">
+          <div class="reply"><i class="material-icons">reply</i> Reply</div>
+        </div>
+
+        <div class="comment-item child">
+          <img class="profile-picture" src="https://pbs.twimg.com/profile_images/545995221914230785/N9a6vr0W.jpeg" alt="">
+          <span class="time-ago">2 days ago</span>
+          <div class="comment-content">
+           <span class="user-name">Sam Soffess</span>
+            <p class="user-comment">Hi Huy, thanks for your instructing. Do you know where I can find information of the other members? I am curious to know more about <a href="" class="mention">@Vincent</a></p>         
+          </div>
+          <div class="comment-acitons">
+            <div class="reply"><i class="material-icons">reply</i> Reply</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="comments-input">
+        <img class="profile-picture" src="https://pbs.twimg.com/profile_images/555814087167205376/7sPnaA_u_400x400.png" alt="">
+        <textarea name="comment-input" placeholder="What do you want to share about this data?" id="" cols="30" rows="4"></textarea>
+        <button class="btn btn__success">Post</button>
+      </div>
+    </section>
+  </main>
+
+
+<script>
+  var ctx = $("#myLineChart-2").get(0).getContext("2d"); 
+
+  var gradientVN = ctx.createLinearGradient(0, 0, 0, 400);
+      gradientVN.addColorStop(0, 'rgba(247,103,97,.3)');   
+      gradientVN.addColorStop(1, 'rgba(247,103,97,0)');
+
+  var gradientLao = ctx.createLinearGradient(0, 0, 0, 400);
+      gradientLao.addColorStop(0, 'rgba(54,223,165,.3)');   
+      gradientLao.addColorStop(1, 'rgba(54,223,165,0)');
+
+
+  var data = {
+      labels: ["2004", "2005", "2006", "2007", "2008", "2009", "2010"],
+      datasets: [
+          {
+              label: "Viet Nam",
+              fillColor: gradientVN,
+              strokeColor: "rgba(247,103,97,1)",
+              pointColor: "rgba(247,103,97,1)",
+              pointStrokeColor: "rgba(247,103,97,1)",
+              pointHighlightFill: "rgba(247,103,97,1)",
+              pointHighlightStroke: "rgba(247,103,97,1)",
+              data: [500283424, 381492896, 564137536, 672526144, 977367360, 748003520, 974168768]
+          },
+          {
+              label: "Lao PDR",
+              fillColor: gradientLao,
+              strokeColor: "rgba(54,223,165,1)",
+              pointColor: "rgba(54,223,165,1",
+              pointStrokeColor: "rgba(54,223,165,1)",
+              pointHighlightFill: "rgba(54,223,165,1)",
+              pointHighlightStroke: "rgba(54,223,165,1)",
+              data: [84016016, 57297984, 83063304, 93523936, 154128576, 106757600, 164992688]
+          }
+      ]
+  };
+
+  var myNewChart = new Chart(ctx).Line(data, {
+    responsive: true,
+    datasetStrokeWidth : 2,
+    pointDotStrokeWidth : 3,
+    scaleGridLineColor : "rgba(155,155,155,.1)",
+    scaleLineColor: "rgba(155,155,155,0)",
+    scaleShowVerticalLines: false,
+    scaleFontColor: "#6B7E82", 
+    scaleLabel: "<%=value + '    '%>",
+    scaleOverride : true,
+    scaleSteps : 4,
+    scaleStepWidth : 250000000,
+    scaleStartValue : 0,
+  });
+
+</script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+
+</body>
+</html>
