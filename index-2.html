@@ -9,9 +9,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="bower_components/selectize/dist/css/selectize.css" />
-  <!-- <link rel="stylesheet" href="http://basehold.it/6"> -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="https://raw.github.com/LeaVerou/prefixfree/gh-pages/prefixfree.min.js"></script>
   <script src="bower_components/selectize/dist/js/standalone/selectize.min.js"></script>
   <script src="bower_components/chartjs/Chart.min.js"></script>
 </head>
@@ -34,11 +32,37 @@
   </header>
   <main class="wrapper">
     <div class="chart-header">
-      <div class="indicator-selector">
+      <div class="indicator-selector" id="indicator-list">
           <label for="indicator-selector">Choose Indicator</label>
-          <i class="material-icons right">keyboard_arrow_down</i>
+          <i class="material-icons right" id="arrow">keyboard_arrow_down</i>
           <h3 class="indicator-name">Adjusted Savings: Net Forest Depletion </h3>
           <span class="indicator-value">(current US$)</span>
+          <div class="indicator-list none">
+            <div class="indicator-item">
+              <h3 class="indicator-name">Adequacy of social insurance programs </h3>
+              <span class="indicator-value">(% of total welfare of beneficiary households)  </span>
+            </div>
+            <div class="indicator-item">
+              <h3 class="indicator-name">Adjusted savings: net forest depletion</h3>
+              <span class="indicator-value">(current US$)</span>
+            </div>
+            <div class="indicator-item">
+              <h3 class="indicator-name">Communications, computer, etc. </h3>
+              <span class="indicator-value">(% of service imports, BoP) </span>
+            </div>
+            <div class="indicator-item">
+              <h3 class="indicator-name">Adequacy of social insurance programs </h3>
+              <span class="indicator-value">(% of total welfare of beneficiary households)  </span>
+            </div>
+            <div class="indicator-item">
+              <h3 class="indicator-name">Adjusted savings: net forest depletion</h3>
+              <span class="indicator-value">(current US$)</span>
+            </div>
+            <div class="indicator-item">
+              <h3 class="indicator-name">Communications, computer, etc. </h3>
+              <span class="indicator-value">(% of service imports, BoP) </span>
+            </div>
+          </div>
       </div>
       <div class="right">
         <div class="year-selector">

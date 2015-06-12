@@ -31,6 +31,18 @@ jQuery(document).ready(function($){
     plugins: ['remove_button']
   });
 
+  $('#indicator-list').on('click', function(event){
+    event.preventDefault();
+    $('.indicator-selector').toggleClass('active');
+    $('.indicator-list').toggleClass('none');
+    if ( $('#arrow').text() === "keyboard_arrow_down") {
+      $('#arrow').text('keyboard_arrow_up');
+    } else {
+      $('#arrow').text('keyboard_arrow_down');
+    }
+  
+  });
+
 
 
 });

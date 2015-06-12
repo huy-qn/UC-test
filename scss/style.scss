@@ -19,7 +19,7 @@ $red: #DB665E;
 $header-background: #1D2934;
 $secondary-gray: #4A5D63;
 $lighter-secondary-gray: #6A7C80;
-$secondary-green: #00B15C;
+$secondary-green: #1AA079;
 $text-color: #B6B6B6;
 $baseline: 6px;
 $column-width: 90px;
@@ -30,6 +30,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.none {
+  display: none;
+}
+
+article {
+  margin-bottom: $column-width * 2;
+}
 
 // ROUND 2
 
@@ -176,11 +183,14 @@ body {
       }
       .indicator-selector {
         width: $column-width * 4 + $gutter * 3;
+        padding: $baseline * 2;
+        padding-bottom: 0;
       }
       .year-selector {
         width: $column-width - 15px;
         margin-right: $gutter; 
       }
+
       .indicator-selector, .year-selector {
         display: block;
         float: left;
@@ -202,6 +212,43 @@ body {
       span.indicator-value {
         color: $secondary-green;
         font-size: $baseline * 2;
+      }
+
+      .indicator-selector.active {
+        background: $header-background;
+        border-radius: 2px 2px 0px 0px;
+        box-shadow: 1px -1px 3px 0px rgba(0,0,0,0.1);
+
+        i {
+          color: $lighter-secondary-gray;
+        }
+
+        .indicator-list {
+          border-top: solid 1px darken($picton-blue, 49%);
+          background: $header-background;
+          width: $column-width * 4 + $gutter * 3 + $baseline * 4;
+          margin-left: -$baseline * 2;
+          position: absolute;
+          height: $column-width * 3;
+          overflow-y: scroll;
+          box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.1);
+
+          span { 
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+          }
+
+          .indicator-item {
+            border-bottom: solid 1px darken($picton-blue, 49%);
+            padding: $baseline * 2;
+
+            &:hover {
+              background: darken($tangaroa, 4%);
+              cursor: pointer;
+            }
+          }
+        }
       }
     }
 
@@ -811,5 +858,22 @@ label {
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+
+  img {
+    max-width: 140%;
+    display: block;
+    margin-left: -20%;
+  }
+
+  figcaption {
+    margin-top: $baseline * 2;
+    font-size: $baseline * 2.5;
+    color: grey;
+  }
+
+  a.quote {
+    color: $black;
+    border-bottom: solid 1px $darkblue;
   }
 }
